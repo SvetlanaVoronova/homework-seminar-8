@@ -1,0 +1,41 @@
+from tkinter import *      # импортируем tkinter
+import 
+  
+root = Tk()
+  
+root.geometry('400x500')   # задаем размеры окна
+  
+Name = StringVar()         # прописываем поля и кнопки 
+Number = StringVar()
+  
+frame = Frame()
+frame.pack(pady = 10)
+  
+frame1 = Frame()
+frame1.pack()
+  
+frame2 = Frame()
+frame2.pack(pady = 10)
+  
+Label(frame, text = 'Имя', font = 'georgia 12').pack(side = LEFT)
+Entry(frame, textvariable = Name, width = 50).pack()
+  
+Label(frame1, text = 'Номер', font = 'georgia 12').pack(side = LEFT)
+Entry(frame1, textvariable = Number, width = 50).pack()
+  
+Label(frame2, text = 'Адрес', font = 'georgia 12').pack(side = LEFT)
+address = Text(frame2, width = 37, height = 10)
+address.pack()
+  
+Button(root, text = "Добавить", font = "georgia 12").place(x = 100, y = 260)
+Button(root, text = "Смотреть", font = "georgia 12").place(x = 100, y = 300)
+Button(root, text = "Удалить", font = "georgia 12").place(x = 100, y = 340)
+Button(root, text = "Очистить", font = "georgia 12").place(x = 100, y = 380)
+  
+scroll_bar = Scrollbar(root, orient = VERTICAL)
+select = Listbox(root, yscrollcommand = scroll_bar.set, height = 12)
+scroll_bar.config (command = select.yview)
+scroll_bar.pack(side = RIGHT, fill = Y)
+select.place(x = 200, y = 250)
+  
+root.mainloop()           # пуск
