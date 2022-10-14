@@ -1,0 +1,27 @@
+book = []
+
+def add():
+	global book
+	book.append([Name.get(),Number.get(),address.get(1.0, "end-1c")])
+	update_book()
+
+def view():
+	Name.set(book[int(select.curselection()[0])][0])
+	Number.set(book[int(select.curselection()[0])][1])
+	address.delete(1.0,"end")
+	address.insert(1.0, book[int(select.curselection()[0])][2])
+
+def delete():
+	del book[int(select.curselection()[0])]
+	update_book()
+
+def reset():
+	Name.set('')
+	Number.set('')
+	address.delete(1.0,"end")
+
+def update_book():
+	select.delete(0,END)
+	
+	for n,p,a in datas:
+		select.insert(END, n)
