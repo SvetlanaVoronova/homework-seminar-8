@@ -3,7 +3,7 @@ import logic_pr
   
 root = Tk()
   
-root.geometry('400x500')   # задаем размеры окна
+root.geometry('500x500')   # задаем размеры окна
   
 Name = StringVar()         # прописываем поля и кнопки 
 Number = StringVar()
